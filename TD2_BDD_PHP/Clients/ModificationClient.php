@@ -11,10 +11,27 @@
     <div class="middle">
         <form action="" method="POST">
 
+       
+        <td>Numero client</td>
             <input type="text" name="cliNum">
-
-
-            <input type="submit" value="Modifier"></input>
+            
+            <br></br><td>Nom du client</td>
+            <input type="text" name="cliNom">
+            
+            <br></br><td>Prenom du client</td>
+            <input type="text" name="cliPrenom">
+            
+            <br></br><td>Code de postal</td>
+            <input type="text" name="cliCPostal">
+            
+            <br></br><td>Ville du Client</td>
+            <input type="text" name="cliVille">
+            
+            <br></br><td>Mot de passe</td>
+            <input type="password" name="cliMdp">
+            
+            <br></br>
+            <input type="submit" value="Modifier" name="submit"></input>
 
         </form>
 </div>
@@ -31,13 +48,6 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 {
     echo 'Database Not selected';
 }
-/*
-$cliNum = 
-$cliNom = 
-$cliPrenom = 
-$cliCPostal =
-$cliVille = 
-*/
 
 $cliNum = isset($_POST['cliNum']) ? $_POST['cliNum'] : '';
 $cliNom = isset($_POST['cliNom']) ? $_POST['cliNom'] : '';
@@ -46,25 +56,20 @@ $cliCPostal = isset($_POST['cliCPostal']) ? $_POST['cliCPostal'] : '';
 $cliVille = isset($_POST['cliVille']) ? $_POST['cliVille'] : '';
 $cliMdp = isset($_POST['cliMdp']) ? $_POST['cliMdp'] : '';
 
+if(isset($_POST['submit'])) {
 
-   // $sql = "insert into client(cliNum,cliNom,cliPrenom,cliCPostal,cliVille,cliMdp) VALUES ('$cliNum','$cliNom' ,'$cliPrenom','$cliCPostal', '$cliVille','$cliMdp')";
-   
-    $sql = "update client set 
-    cliNum = $cliNum 
-    cliNom =$cliNom 
-    cliPrenom= $cliPrenom 
-    cliCPostal=$cliCPostal 
-    cliVille= $cliVille where cliNum = '$cliNum'";
+   $sql = "UPDATE Client SET cliNom ='$cliNom', cliPrenom = '$cliPrenom', cliCpostal = '$cliCPostal', cliVille = '$cliVille', cliMdp = '$cliMdp' WHERE cliNum = '$cliNum' ";
+
     
     if(!mysqli_query($con,$sql)) {
-        echo 'Votre demande n a pas pu être réalisée supprimer';
+        echo '<b>Votre demande n a pas pu être réalisée</b>';
     }
     else
     {
-        echo 'Votre demande a etait réalisée ';
+        echo '<b>Votre demande a etait réalisée </b>';
     }
 
-    
+}
             ?>
 </body>
 </html>
