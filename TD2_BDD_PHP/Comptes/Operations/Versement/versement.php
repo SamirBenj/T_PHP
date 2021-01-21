@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Versment </title>
+    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <title>Versement </title>
 </head>
 <body>
 
 <h2>VERSEMENT </h2>
+<div class="middle">
         <form action="" method="POST">
 
-            <input type="text" name="cpteNum">
-            <input type="text" name="cpteSolde">
+            <td>Numero du Compte</td>
+            <input type="text" name="cpteNum"><br></br>
 
+            <td>Solde</td>
+            <input type="text" name="cpteSolde">
+            <br></br>
             <input type="submit" value="Versement"name="submit"></input>
 
         </form>

@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creation -Client </title>
+    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <title>Modification -Client </title>
 </head>
 <body>
-    <h2>Creation des clients</h2>
+    <h2>Modification des clients</h2>
+    <div class="middle">
         <form action="" method="POST">
 
             <input type="text" name="cliNum">
 
 
-            <input type="submit" value="ajouter"></input>
+            <input type="submit" value="Modifier"></input>
 
         </form>
+</div>
 
         <?php
 
@@ -54,11 +57,11 @@ $cliMdp = isset($_POST['cliMdp']) ? $_POST['cliMdp'] : '';
     cliVille= $cliVille where cliNum = '$cliNum'";
     
     if(!mysqli_query($con,$sql)) {
-        echo 'Not inserted';
+        echo 'Votre demande n a pas pu être réalisée supprimer';
     }
     else
     {
-        echo 'La ligne est inserer';
+        echo 'Votre demande a etait réalisée ';
     }
 
     

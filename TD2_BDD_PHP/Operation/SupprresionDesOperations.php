@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+
     <title>Creation -Compte </title>
 </head>
 <body>
 
-<h2>Suppresion D'une Operation</h2>
-        <form action="" method="POST">
-        <input type="text" name="opeNum">
+<h2>Suppresion d'une operation</h2>
 
-        <input type="submit" value="Supprimer"></input>
+    <div class="middle">
+        <form action="" method="POST">
+            <td>Numero de l'operation</td>
+            <input type="text" name="opeNum">
+            
+            <br></br>
+            <input type="submit" value="Supprimer" name="submit"></input>
 
         </form>
+    </div>
         <?php
 
 $con = mysqli_connect('localhost', 'root', 'toor');
@@ -29,17 +36,19 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 
 $opeNum = isset($_POST['opeNum']) ? $_POST['opeNum'] : '';
 
-
+if(isset($_POST['submit'])){
 
     $sql = "delete from operations where opeNum = '$opeNum'";
 
     if(!mysqli_query($con,$sql)) {
-        echo 'Not Deleted';
+        echo '<b>Votre demande n a pas pu être réalisée</b>';
     }
     else
     {
-        echo 'Deleted';
+        echo '<b>Votre demande a etait réalisée</b>';
     }
+
+}
 
     
             ?>

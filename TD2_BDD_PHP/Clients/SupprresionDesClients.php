@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creation -Compte </title>
+    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <title>Supprimer -Compte </title>
 </head>
 <body>
 
 <h2>Suppresion D'un Clients</h2>
-        <form action="" method="POST">
-        <input type="text" name="cliNom">
+    <form action="" method="POST">
 
-            <input type="submit" value="Supprimer"></input>
-
+    
+    <div class="middle">
+            <td>Nom du client</td>
+            <input type="text" name="cliNom">
+            <br></br>
+            <input type="submit" value="Supprimer" name="submit"></input>
+    
         </form>
+    </div>
         <?php
 
 $con = mysqli_connect('localhost', 'root', 'toor');
@@ -33,22 +39,27 @@ $cliPrenom = $_POST['cliPrenom'];
 $cliCPostal = $_POST['cliCPostal'];
 $cliVille = $_POST['cliVille'];
 */
-
 $cliNom = isset($_POST['cliNom']) ? $_POST['cliNom'] : '';
+
+
+if(isset($_POST['submit'])) {
+
+
 
 
 
     $sql = "delete from client where cliNom = '$cliNom'";
 
     if(!mysqli_query($con,$sql)) {
-        echo 'Not Deleted';
+
+        echo 'Votre demande n a pas pu être réalisée supprimer';
     }
     else
     {
-        echo 'Deleted';
+        echo 'Client supprimer';
     }
 
-    
+}    
             ?>
 </body>
 </html>

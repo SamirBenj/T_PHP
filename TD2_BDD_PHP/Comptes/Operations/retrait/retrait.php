@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+
     <title>DEBITER </title>
 </head>
 <body>
 
 <h2>DEBITER </h2>
+<div class="middle">
         <form action="" method="POST">
+            <td>Numero du Compte</td>
+            <input type="text" name="cpteNum"><br></br>
 
-            <input type="text" name="cpteNum">
+            <td>Solde</td>
             <input type="text" name="cpteSolde">
-
-            <input type="submit" value="Debiter"name="submit"></input>
+            <br></br>
+            <input type="submit" value="Debiter"name="submit"/>
 
         </form>
+</div>
         <?php
 
         $con = mysqli_connect('localhost', 'root', 'toor');

@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
     <title>Consultation </title>
 </head>
 <body>
 
-<h2>VERSEMENT </h2>
-        <form action="" method="POST">
-
+<h2>CONSULTATION DE COMPTE </h2>
+<div class="middle">
+        <form action="" method="POST" >
+            <td>Numéro du Compte</td>
             <input type="text" name="cpteNum">
+            <br></br><td>Mot de passe</td>
             <input type="password" name="cliMdp">
-
+            <br></br>
             <input type="submit" value="Consulter"name="submit"></input>
 
         </form>
+</div>
         <?php
 
         $con = mysqli_connect('localhost', 'root', 'toor');
