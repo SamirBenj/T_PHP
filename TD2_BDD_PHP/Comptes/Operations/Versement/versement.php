@@ -9,19 +9,23 @@
 <body>
 
 <h2>VERSEMENT </h2>
-<div class="middle">
-        <form action="" method="POST">
+    <div class="middle">
+            <form action="" method="POST">
 
-            <td>Numero du Compte</td>
-            <input type="text" name="cpteNum"><br></br>
+                <td>Numero du Compte</td>
+                <input type="text" name="cpteNum"><br></br>
 
-            <td>Solde</td>
-            <input type="text" name="cpteSolde">
-            <br></br>
-            <input type="submit" value="Versement"name="submit"></input>
+                <td>Solde</td>
+                <input type="text" name="cpteSolde">
+                <br></br>
+                <input type="submit" value="Versement"name="submit"></input>
 
-        </form>
-        <?php
+            </form>
+            
+        <br>
+        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+    </div>
+            <?php
 
         $con = mysqli_connect('localhost', 'root', 'toor');
         
@@ -33,13 +37,7 @@
         {
             echo 'Database Not selected';
         }
-        /*
-        $cliNum = $_POST['cliNum'];
-        $cliNom = $_POST['servNom'];
-        $cliPrenom = $_POST['cliPrenom'];
-        $cliCPostal = $_POST['cliCPostal'];
-        $cliVille = $_POST['cliVille'];
-        */
+
         
         $cpteNum = isset($_POST['cpteNum']) ? $_POST['cpteNum'] : '';
         $cpteSolde = isset($_POST['cpteSolde']) ? $_POST['cpteSolde'] : '';
@@ -57,22 +55,7 @@
             {
                 echo 'La ligne est inserer';
             }
-        /*
-            //Affichage tableau
-            $result = mysqli_query($con,$sql);
-        
-            print " <h2>Liste des Comptes</h2> <table bgcolor=yellow border=2>\n";
-            
-            while ( $a_row = mysqli_fetch_row( $result ) )
-            {
-                print "<tr>\n";
-                foreach ( $a_row as $field ) 
-                print "\t<td>$field</td>\n";
-                print "</tr>\n";
-         }
-        
-             print "</table>\n";
-        */
+       
         }
             
                     ?>

@@ -32,13 +32,7 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 {
     echo 'Database Not selected';
 }
-/*
-$cliNum = $_POST['cliNum'];
-$cliNom = $_POST['servNom'];
-$cliPrenom = $_POST['cliPrenom'];
-$cliCPostal = $_POST['cliCPostal'];
-$cliVille = $_POST['cliVille'];
-*/
+
 $cliNom = isset($_POST['cliNom']) ? $_POST['cliNom'] : '';
 
 

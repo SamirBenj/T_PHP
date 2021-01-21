@@ -42,5 +42,9 @@
 
      print "</table>\n";
     ?>
+
+    
+<br>
+        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
 </body>
 </html>

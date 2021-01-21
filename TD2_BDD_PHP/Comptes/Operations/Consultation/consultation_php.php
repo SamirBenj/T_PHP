@@ -19,6 +19,9 @@
             <input type="submit" value="Consulter"name="submit"></input>
 
         </form>
+        
+        <br>
+        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
 </div>
         <?php
 
@@ -32,13 +35,7 @@
         {
             echo 'Database Not selected';
         }
-        /*
-        $cliNum = $_POST['cliNum'];
-        $cliNom = $_POST['servNom'];
-        $cliPrenom = $_POST['cliPrenom'];
-        $cliCPostal = $_POST['cliCPostal'];
-        $cliVille = $_POST['cliVille'];
-        */
+
         
         $cpteNum = isset($_POST['cpteNum']) ? $_POST['cpteNum'] : '';
         $cliMdp = isset($_POST['cliMdp']) ? $_POST['cliMdp'] : '';

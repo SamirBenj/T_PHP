@@ -14,8 +14,10 @@
         <form action="" method="POST">
             <td>Numero de Compte</td>
             <input type="text" name="cpteNum">
+
             <br></br><td>Type d'operation</td>
             <input type="text" name="cpteType">
+            
             <br></br><td>Solde</td>
             <input type="text" name="cpteSolde">
             <br></br><td>Numero compte client</td>
@@ -24,6 +26,9 @@
             <input type="submit" value="ajouter" name="submit"></input>
 
         </form>
+        
+        <br>
+        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
 </div>
     <?php
 
@@ -37,13 +42,7 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 {
     echo 'Database Not selected';
 }
-/*
-$cliNum = $_POST['cliNum'];
-$cliNom = $_POST['servNom'];
-$cliPrenom = $_POST['cliPrenom'];
-$cliCPostal = $_POST['cliCPostal'];
-$cliVille = $_POST['cliVille'];
-*/
+
 
 $cpteNum = isset($_POST['cpteNum']) ? $_POST['cpteNum'] : '';
 $cpteType = isset($_POST['cpteType']) ? $_POST['cpteType'] : '';

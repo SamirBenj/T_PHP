@@ -31,9 +31,12 @@
             <input type="password" name="cliMdp">
             
             <br></br>
+            <input type="submit" value="Effacer" name="erase"></input>
             <input type="submit" value="Modifier" name="submit"></input>
 
         </form>
+        <br>
+        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
 </div>
 
         <?php
@@ -58,7 +61,7 @@ $cliMdp = isset($_POST['cliMdp']) ? $_POST['cliMdp'] : '';
 
 if(isset($_POST['submit'])) {
 
-   $sql = "UPDATE Client SET cliNom ='$cliNom', cliPrenom = '$cliPrenom', cliCpostal = '$cliCPostal', cliVille = '$cliVille', cliMdp = '$cliMdp' WHERE cliNum = '$cliNum' ";
+   $sql = "UPDATE Client SET cliNom ='$cliNom', cliPrenom = '$cliPrenom', cliCPostal = '$cliCPostal', cliVille = '$cliVille', cliMdp = '$cliMdp' WHERE cliNum = '$cliNum' ";
 
     
     if(!mysqli_query($con,$sql)) {
@@ -70,6 +73,8 @@ if(isset($_POST['submit'])) {
     }
 
 }
+
+
             ?>
 </body>
 </html>

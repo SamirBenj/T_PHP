@@ -15,20 +15,30 @@
         <form action="" method="POST">
             <td>Numero client</td>
             <input type="text" name="cliNum">
+
             <br></br><td>Nom du client</td>
             <input type="text" name="cliNom">
+
             <br></br><td>Prenom du client</td>
             <input type="text" name="cliPrenom">
+
             <br></br><td>Code de postal</td>
             <input type="text" name="cliCPostal">
+
             <br></br><td>Ville du Client</td>
             <input type="text" name="cliVille">
+            
             <br></br><td>Mot de passe</td>
             <input type="text" name="cliMdp">
             <br></br>
-            <input type="submit" value="ajouter" name="submit"></input>
+
+            <input type="submit" value="Effacer" name="erase"></input>
+            <input type="submit" value="Ajouter" name="submit"></input>
 
         </form>
+        <br>
+        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+
     </div>
         <?php
 
@@ -42,13 +52,7 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 {
     echo 'Database Not selected';
 }
-/*
-$cliNum = $_POST['cliNum'];
-$cliNom = $_POST['servNom'];
-$cliPrenom = $_POST['cliPrenom'];
-$cliCPostal = $_POST['cliCPostal'];
-$cliVille = $_POST['cliVille'];
-*/
+
 
 $cliNum = isset($_POST['cliNum']) ? $_POST['cliNum'] : '';
 $cliNom = isset($_POST['cliNom']) ? $_POST['cliNom'] : '';
@@ -69,8 +73,14 @@ if(isset($_POST['submit'])) {
         echo 'le client est creer';
     }
 }
+
+if(isset($_POST['erase'])   ){
+    echo '';
+}
     
             ?>
+
+            
 </body>
 </html>
 

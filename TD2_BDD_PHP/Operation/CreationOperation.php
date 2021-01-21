@@ -31,6 +31,9 @@
             <input type="submit" value="ajouter" name="submit"></input>
 
         </form>
+        
+        <br>
+        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
     </div>
         <?php
 
@@ -44,15 +47,6 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 {
     echo 'Database Not selected';
 }
-
-
-/*
-$cliNum = $_POST['cliNum'];
-$cliNom = $_POST['servNom'];
-$cliPrenom = $_POST['cliPrenom'];
-$cliCPostal = $_POST['cliCPostal'];
-$cliVille = $_POST['cliVille'];
-*/
 
 $opeNum = isset($_POST['opeNum']) ? $_POST['opeNum'] : '';
 $opeType = isset($_POST['opeType']) ? $_POST['opeType'] : '';
