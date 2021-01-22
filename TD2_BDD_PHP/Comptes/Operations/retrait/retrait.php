@@ -10,22 +10,23 @@
 <body>
 
 <h2>DEBITER </h2>
-<div class="middle">
-        <form action="" method="POST">
-            <td>Numero du Compte</td>
-            <input type="text" name="cpteNum"><br></br>
+    <div class="middle">
+            <form action="" method="POST">
+                <td>Numero du Compte</td>
+                <input type="text" name="cpteNum"><br></br>
 
-            <td>Solde</td>
-            <input type="text" name="cpteSolde">
-            <br></br>
-            <input type="submit" value="Debiter"name="submit"/>
+                <td>Solde</td>
+                <input type="text" name="cpteSolde">
+                <br></br>
+                <input type="submit" value="Debiter"name="submit"/>
+                <input type="submit" name="erase" value="Effacer">
+            </form>
+            
+            <br>
+            <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+    </div>
 
-        </form>
-        
-        <br>
-        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
-</div>
-        <?php
+<?php
 
         $con = mysqli_connect('localhost', 'root', 'toor');
         
@@ -44,16 +45,23 @@
         
         if(isset($_POST['submit'])){
         
-        
-        
-            $sql = "UPDATE compte SET cpteSolde = cpteSolde - '$cpteSolde' WHERE cpteNum = '$cpteNum'";
+            
+            if(empty($cpteNum) || empty($cpteSolde)) {
+                echo '<b>Inserer la valeur !</b>';
+            }else {
+                $sql = "UPDATE compte SET cpteSolde = cpteSolde - '$cpteSolde' WHERE cpteNum = '$cpteNum'";
+
+
             if(!mysqli_query($con,$sql)) {
-                echo 'Not inserted';
+                echo '<b>Votre demande a etait réalisée </b>'; 
             }
             else
             {
-                echo 'La ligne est inserer';
+               echo '<b>Votre demande n a pas pu être réalisée</b>';
+
             }
+            }
+            
 
         /*
             //Affichage tableau
@@ -72,7 +80,10 @@
              print "</table>\n";
         */
         }
-            
+
+if(isset($_POST['erase'])   ){
+            echo '';
+        }    
                     ?>
 </body>
 </html>

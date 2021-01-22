@@ -7,7 +7,7 @@
 
     <title>Creation -Compte </title>
 </head>
-<body>
+<body >
 
 <h2>Suppresion d'une operation</h2>
 
@@ -18,6 +18,7 @@
             
             <br></br>
             <input type="submit" value="Supprimer" name="submit"></input>
+            <input type="submit" name="erase" value="Effacer" >
 
         </form>
         
@@ -39,19 +40,25 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 
 $opeNum = isset($_POST['opeNum']) ? $_POST['opeNum'] : '';
 
-if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])){
 
-    $sql = "delete from operations where opeNum = '$opeNum'";
+    
+        if((empty($cliNum) || empty($cliNom) || empty($cliPrenom) ||empty($cliCPostal) ||empty($cliVille) || empty($cliMdp) )) {
+            echo '<b>Inserer la valeur<b>';
+        
+        }else{
+            $sql = "delete from operations where opeNum = '$opeNum'";
 
-    if(!mysqli_query($con,$sql)) {
-        echo '<b>Votre demande n a pas pu être réalisée</b>';
+            if(!mysqli_query($con,$sql)) {
+                echo '<b>Votre demande n a pas pu être réalisée</b>';
+            }
+            else
+            {
+                echo '<b>Votre demande a etait réalisée</b>';
+            }
+        }
+
     }
-    else
-    {
-        echo '<b>Votre demande a etait réalisée</b>';
-    }
-
-}
 
     
             ?>

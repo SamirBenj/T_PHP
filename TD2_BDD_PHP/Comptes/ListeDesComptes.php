@@ -21,7 +21,7 @@
     if($link->connect_error){
         die('Erreur : ' .$link->connect_error);
     }
-    echo 'Connexion réussie';
+    
     mysqli_select_db( $link,$db);
     //requete 
 
@@ -43,8 +43,9 @@
      print "</table>\n";
     ?>
 
-    
-<br>
-        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+        <div class="middle">    
+            <br>
+            <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+        </div>
 </body>
 </html>

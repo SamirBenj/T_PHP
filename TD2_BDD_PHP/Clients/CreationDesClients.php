@@ -7,7 +7,7 @@
 
     <title>Creation -Client </title>
 </head>
-<body>
+<body >
     <h2>Creation des clients</h2>
     
     <div class="middle">
@@ -30,10 +30,10 @@
             
             <br></br><td>Mot de passe</td>
             <input type="text" name="cliMdp">
-            <br></br>
 
-            <input type="submit" value="Effacer" name="erase"></input>
+            <br></br>
             <input type="submit" value="Ajouter" name="submit"></input>
+            <input type="submit" value="Effacer" name="erase"></input>
 
         </form>
         <br>
@@ -61,18 +61,25 @@ $cliCPostal = isset($_POST['cliCPostal']) ? $_POST['cliCPostal'] : '';
 $cliVille = isset($_POST['cliVille']) ? $_POST['cliVille'] : '';
 $cliMdp = isset($_POST['cliMdp']) ? $_POST['cliMdp'] : '';
 
-if(isset($_POST['submit'])) {
 
-    $sql = "insert into client(cliNum,cliNom,cliPrenom,cliCPostal,cliVille,cliMdp) VALUES ('$cliNum','$cliNom' ,'$cliPrenom','$cliCPostal', '$cliVille','$cliMdp')";
+    if(isset($_POST['submit'])) {
 
-    if(!mysqli_query($con,$sql)) {
-        echo 'le client n a pas etait créer';
-    }
-    else
-    {
-        echo 'le client est creer';
-    }
-}
+        if((empty($cliNum) || empty($cliNom) || empty($cliPrenom) ||empty($cliCPostal) ||empty($cliVille) || empty($cliMdp) )) {
+            echo '<b>Inserer la/les valeur(s)';
+        
+        }else{
+
+            $sql = "insert into client(cliNum,cliNom,cliPrenom,cliCPostal,cliVille,cliMdp) VALUES ('$cliNum','$cliNom' ,'$cliPrenom','$cliCPostal', '$cliVille','$cliMdp')";
+
+            if(!mysqli_query($con,$sql)) {
+                echo '<b>le client n a pas etait créer<b>';
+            }else
+                {
+                    echo '<b>le client est creer<b>';
+                }
+    
+            }
+        }
 
 if(isset($_POST['erase'])   ){
     echo '';

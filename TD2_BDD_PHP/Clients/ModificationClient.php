@@ -6,13 +6,13 @@
     <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
     <title>Modification -Client </title>
 </head>
-<body>
+<body >
     <h2>Modification des clients</h2>
     <div class="middle">
         <form action="" method="POST">
 
        
-        <td>Numero client</td>
+        <td>Numero client *</td>
             <input type="text" name="cliNum">
             
             <br></br><td>Nom du client</td>
@@ -30,10 +30,11 @@
             <br></br><td>Mot de passe</td>
             <input type="password" name="cliMdp">
             
-            <br></br>
-            <input type="submit" value="Effacer" name="erase"></input>
-            <input type="submit" value="Modifier" name="submit"></input>
+            <br></br> <p>*(obligatoires)</p>
 
+            <input type="submit" value="Modifier" name="submit"></input>
+            <input type="submit" value="Effacer" name="erase"></input>
+           
         </form>
         <br>
         <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
@@ -61,19 +62,27 @@ $cliMdp = isset($_POST['cliMdp']) ? $_POST['cliMdp'] : '';
 
 if(isset($_POST['submit'])) {
 
-   $sql = "UPDATE Client SET cliNom ='$cliNom', cliPrenom = '$cliPrenom', cliCPostal = '$cliCPostal', cliVille = '$cliVille', cliMdp = '$cliMdp' WHERE cliNum = '$cliNum' ";
-
     
-    if(!mysqli_query($con,$sql)) {
-        echo '<b>Votre demande n a pas pu être réalisée</b>';
-    }
-    else
-    {
-        echo '<b>Votre demande a etait réalisée </b>';
-    }
+    if((empty($cliNum) || empty($cliNom) || empty($cliPrenom) ||empty($cliCPostal) ||empty($cliVille) || empty($cliMdp) )) {
+        echo '<b>Inserer la/les valeur(s)';
+    
+    }else{
+        $sql = "UPDATE Client SET cliNom ='$cliNom', cliPrenom = '$cliPrenom', cliCPostal = '$cliCPostal', cliVille = '$cliVille', cliMdp = '$cliMdp' WHERE cliNum = '$cliNum' ";
 
+            
+            if(!mysqli_query($con,$sql)) {
+                echo '<b>Votre demande n a pas pu être réalisée</b>';
+            }
+            else
+            {
+                echo '<b>Votre demande a etait réalisée </b>';
+            }
+    }
 }
 
+if(isset($_POST['erase'])   ){
+    echo '';
+}
 
             ?>
 </body>

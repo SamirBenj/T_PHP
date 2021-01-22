@@ -11,9 +11,12 @@
 <h2>Suppresion D'un Compte</h2>
     <div class="middle">
             <form action="" method="POST">
+                <td>Numero du compte</td>
                 <input type="text" name="cpteNum">
                 <br></br>
+
                 <input type="submit" value="Supprimer" name="submit"></input>
+                <input type="submit" name="erase" value="Effacer">
 
             </form>
             
@@ -47,6 +50,10 @@ if(isset($_POST['submit'])){
         echo ' <br> <b>Votre demande a etait réalisée</b>'; 
     }
 
+}
+
+if(isset($_POST['erase'])) {
+    echo '';
 }
             ?>
 

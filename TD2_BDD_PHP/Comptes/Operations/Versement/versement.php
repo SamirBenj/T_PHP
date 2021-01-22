@@ -19,7 +19,7 @@
                 <input type="text" name="cpteSolde">
                 <br></br>
                 <input type="submit" value="Versement"name="submit"></input>
-
+                <input type="submit" name="erase" value="Effacer" />
             </form>
             
         <br>
@@ -42,9 +42,14 @@
         $cpteNum = isset($_POST['cpteNum']) ? $_POST['cpteNum'] : '';
         $cpteSolde = isset($_POST['cpteSolde']) ? $_POST['cpteSolde'] : '';
         
-        if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])){
         
+    
+        if(empty($cpteNum) || empty($cpteSolde) ) {
+
+            echo '<b>Inserer la/les valeur(s)<b>';
         
+        }else{    
         
             $sql = "UPDATE compte SET cpteSolde = cpteSolde +   '$cpteSolde' WHERE cpteNum = '$cpteNum'";
 
@@ -57,6 +62,8 @@
             }
        
         }
+    }
+
             
                     ?>
 </body>

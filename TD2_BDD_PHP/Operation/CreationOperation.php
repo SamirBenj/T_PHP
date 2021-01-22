@@ -27,8 +27,10 @@
             
             <br></br><td>Numero du Compte</td>
             <input type="text" name="opeCpte">
+            
             <br></br>
             <input type="submit" value="ajouter" name="submit"></input>
+            <input type="submit" name="erase" value="Effacer">
 
         </form>
         
@@ -56,16 +58,21 @@ $opeCpte = isset($_POST['opeCpte']) ? $_POST['opeCpte'] : '';
 
 if(isset($_POST['submit'])){
 
-    $sql = "insert into operations(opeNum,opeType,opeDate,opeMontant,opeCpte) VALUES ('$opeNum','$opeType' ,'$opeDate','$opeMontant','$opeCpte')";
+    
+    if((empty($opeNum) || empty($opeType) || empty($opeDate) ||empty($opeMontant) ||empty($opeCpte) )) {
+        echo '<b>Inserer la/les valeur(s)';
+    
+    }else{
+        $sql = "insert into operations(opeNum,opeType,opeDate,opeMontant,opeCpte) VALUES ('$opeNum','$opeType' ,'$opeDate','$opeMontant','$opeCpte')";
 
-    if(!mysqli_query($con,$sql)) {
-        echo '<b>Votre demande n a pas pu être réalisée</b>';
+        if(!mysqli_query($con,$sql)) {
+            echo '<b>Votre demande n a pas pu être réalisée</b>';
+        }
+        else
+        {
+            echo '<b>Votre demande a etait réalisée</b>';
+        }
     }
-    else
-    {
-        echo '<b>Votre demande a etait réalisée</b>';
-    }
-
 }
             ?>
 </body>

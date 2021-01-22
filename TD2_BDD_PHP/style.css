@@ -1,7 +1,13 @@
+body {
+
+background-color: darkgrey;
+}
+
 h2 {
     border: 0.5rem solid black;
     text-align: center;
     line-height: 2;
+    
 }
 
 .middle {
@@ -12,3 +18,9 @@ table {
     margin-left: auto; 
     margin-right: auto;
   }
+
+b {
+    
+    color: red;
+    font-size: 20px;
+}

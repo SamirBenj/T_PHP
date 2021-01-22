@@ -17,7 +17,7 @@
             <input type="password" name="cliMdp">
             <br></br>
             <input type="submit" value="Consulter"name="submit"></input>
-
+            <input type="submit" name="erase" value="Effacer">
         </form>
         
         <br>
@@ -43,8 +43,11 @@
         if(isset($_POST['submit'])){
         
         
+            if((empty($cpteNum) || empty($cliMdp) )) {
+                echo '<b>Inserer la/les valeur(s)';
+            
+            }else{
         
-            //$sql = "select * from Compte where (SELECT cliNom FROM client where cliMdp = '$cliMdp')";
             $sql = "select cpteNum,cpteClient, cpteType, cpteSolde from Compte, Client where client.cliMdp = '$cliMdp'";
         
         
@@ -59,10 +62,11 @@
                 foreach ( $a_row as $field ) 
                 print "\t<td>$field</td>\n";
                 print "</tr>\n";
-         }
+            }
         
              print "</table>\n";
         
+            }
         }
             
                     ?>

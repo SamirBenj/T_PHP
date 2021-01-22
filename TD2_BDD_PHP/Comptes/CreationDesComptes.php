@@ -23,7 +23,9 @@
             <br></br><td>Numero compte client</td>
             <input type="text" name="cpteClient">
             <br></br>
-            <input type="submit" value="ajouter" name="submit"></input>
+
+            <input type="submit" value="ajouter" name="submit"/>
+            <input type="submit" value="Effacer" name="erase"/>
 
         </form>
         
@@ -50,18 +52,27 @@ $cpteSolde = isset($_POST['cpteSolde']) ? $_POST['cpteSolde'] : '';
 $cpteClient = isset($_POST['cpteClient']) ? $_POST['cpteClient'] : '';
 
 if(isset($_POST['submit'])){
+    
+    if((empty($cpteNum) || empty($cpteType) || empty($cpteSolde) || empty($cpteClient) )) {
 
-    $sql = "insert into compte(cpteNum,cpteType,cpteSolde,cpteClient) VALUES ('$cpteNum','$cpteType' ,'$cpteSolde','$cpteClient')";
+        echo '<b>Inserer la/les valeur(s)';
+    
+    }else{
+        $sql = "insert into compte(cpteNum,cpteType,cpteSolde,cpteClient) VALUES ('$cpteNum','$cpteType' ,'$cpteSolde','$cpteClient')";
 
-    if(!mysqli_query($con,$sql)) {
-        echo '<b>Votre demande n a pas pu être réalisée</b>';
-    }
-    else
-    {
-        echo '<b>Votre demande a etait réalisée <b>';
+        if(!mysqli_query($con,$sql)) {
+            echo '<b>Votre demande n a pas pu être réalisée</b>';
+        }
+        else
+        {
+            echo '<b>Votre demande a etait réalisée <b>';
+        }
     }
 }
-    
+
+if(isset($_POST['erase'])   ){
+    echo '';
+}
             ?>
 </body>
 </html>
