@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <link href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/style.css" rel="stylesheet">
 <title>Creation -Compte </title>
 </head>
 <body>
@@ -21,7 +21,7 @@
             </form>
             
         <br>
-        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+        <a href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
     </div>
         <?php
 
@@ -40,14 +40,14 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 
 if(isset($_POST['submit'])){
 
-    $sql = "delete from compte where cpteNum = '$cpteNum'";
+    $sql = "DELETE FROM Compte WHERE cpteNum = '$cpteNum'";
 
     if(!mysqli_query($con,$sql)) {
-        echo '<b>Votre demande n a pas pu être réalisée</b>';
+        echo '<b>Le Compte n a pas pu être supprimer</b>';
     }
     else
     {
-        echo ' <br> <b>Votre demande a etait réalisée</b>'; 
+        echo ' <br> <b>Compte supprimer</b>'; 
     }
 
 }

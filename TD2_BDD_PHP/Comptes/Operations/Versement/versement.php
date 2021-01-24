@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <link href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/style.css" rel="stylesheet">
     <title>Versement </title>
 </head>
 <body>
@@ -23,7 +23,7 @@
             </form>
             
         <br>
-        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+        <a href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
     </div>
             <?php
 
@@ -51,14 +51,14 @@
         
         }else{    
         
-            $sql = "UPDATE compte SET cpteSolde = cpteSolde +   '$cpteSolde' WHERE cpteNum = '$cpteNum'";
+            $sql = "UPDATE Compte SET cpteSolde = cpteSolde +   '$cpteSolde' WHERE cpteNum = '$cpteNum'";
 
             if(!mysqli_query($con,$sql)) {
-                echo 'Not inserted';
+                echo 'Votre Versement n a pas pu être réalisée';
             }
             else
             {
-                echo 'La ligne est inserer';
+                echo '<b>Votre Versement à était réalisée<b>';
             }
        
         }

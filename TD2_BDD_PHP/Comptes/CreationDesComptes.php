@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <link href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/style.css" rel="stylesheet">
 
     <title>Creation -Compte </title>
 </head>
@@ -30,7 +30,7 @@
         </form>
         
         <br>
-        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+        <a href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
 </div>
     <?php
 
@@ -58,14 +58,14 @@ if(isset($_POST['submit'])){
         echo '<b>Inserer la/les valeur(s)';
     
     }else{
-        $sql = "insert into compte(cpteNum,cpteType,cpteSolde,cpteClient) VALUES ('$cpteNum','$cpteType' ,'$cpteSolde','$cpteClient')";
+        $sql = "INSERT INTO Compte(cpteNum,cpteType,cpteSolde,cpteClient) VALUES ('$cpteNum','$cpteType' ,'$cpteSolde','$cpteClient')";
 
         if(!mysqli_query($con,$sql)) {
-            echo '<b>Votre demande n a pas pu être réalisée</b>';
+            echo '<b>le compte n a pas etait créer</b>';
         }
         else
         {
-            echo '<b>Votre demande a etait réalisée <b>';
+            echo '<b>le compte est creer <b>';
         }
     }
 }

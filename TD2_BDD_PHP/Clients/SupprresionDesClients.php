@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <link href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/style.css" rel="stylesheet">
     <title>Supprimer -Compte </title>
 </head>
 <body>
@@ -23,7 +23,7 @@
         </form>
 
         <br></br>
-        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+        <a href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
     </div>
         <?php
 
@@ -46,14 +46,14 @@ if(isset($_POST['submit'])) {
     if(empty($cliNom)) {
         echo '<b>Inserer le Nom !<b>';
     }else{
-    $sql = "delete from client where cliNom = '$cliNom' ";
+    $sql = "DELETE FROM client WHERE cliNom = '$cliNom' ";
 
     if(mysqli_query($con,$sql)) {
 
-        echo '<b>Votre demande n a pas pu être réalisée<b>';
+        echo '<b>Client supprimer<b>';
     }else
       {
-        echo '<b>Client supprimer<b>';
+        echo '<b>Le Client n a pas pu être réalisée<b>';
 
     }
 }

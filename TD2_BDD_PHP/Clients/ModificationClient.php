@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/style.css" rel="stylesheet">
+    <link href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/style.css" rel="stylesheet">
     <title>Modification -Client </title>
 </head>
 <body >
@@ -22,7 +22,7 @@
             <input type="text" name="cliPrenom">
             
             <br></br><td>Code de postal</td>
-            <input type="text" name="cliCPostal">
+            <input type="text" name="cliCpostal">
             
             <br></br><td>Ville du Client</td>
             <input type="text" name="cliVille">
@@ -37,7 +37,7 @@
            
         </form>
         <br>
-        <a href="/TEST_PHP/M.T_PHP/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
+        <a href="/BASE DE DONNEES ET WEB(PHP TSOUNGUI)/TD2_BDD_PHP/" style="color : inherit;">Retour au menu</a>
 </div>
 
         <?php
@@ -56,26 +56,26 @@ if(!mysqli_select_db($con, 'dbcomptes'))
 $cliNum = isset($_POST['cliNum']) ? $_POST['cliNum'] : '';
 $cliNom = isset($_POST['cliNom']) ? $_POST['cliNom'] : '';
 $cliPrenom = isset($_POST['cliPrenom']) ? $_POST['cliPrenom'] : '';
-$cliCPostal = isset($_POST['cliCPostal']) ? $_POST['cliCPostal'] : '';
+$cliCpostal = isset($_POST['cliCpostal']) ? $_POST['cliCpostal'] : '';
 $cliVille = isset($_POST['cliVille']) ? $_POST['cliVille'] : '';
 $cliMdp = isset($_POST['cliMdp']) ? $_POST['cliMdp'] : '';
 
 if(isset($_POST['submit'])) {
 
     
-    if((empty($cliNum) || empty($cliNom) || empty($cliPrenom) ||empty($cliCPostal) ||empty($cliVille) || empty($cliMdp) )) {
+    if((empty($cliNum) || empty($cliNom) || empty($cliPrenom) ||empty($cliCpostal) ||empty($cliVille) || empty($cliMdp) )) {
         echo '<b>Inserer la/les valeur(s)';
     
     }else{
-        $sql = "UPDATE Client SET cliNom ='$cliNom', cliPrenom = '$cliPrenom', cliCPostal = '$cliCPostal', cliVille = '$cliVille', cliMdp = '$cliMdp' WHERE cliNum = '$cliNum' ";
+        $sql = "UPDATE Client SET cliNom ='$cliNom', cliPrenom = '$cliPrenom', cliCpostal = '$cliCpostal', cliVille = '$cliVille', cliMdp = '$cliMdp' WHERE cliNum = '$cliNum' ";
 
             
             if(!mysqli_query($con,$sql)) {
-                echo '<b>Votre demande n a pas pu être réalisée</b>';
+                echo '<b>Votre Modification  n a pas pu être réalisée</b>';
             }
             else
             {
-                echo '<b>Votre demande a etait réalisée </b>';
+                echo '<b>Votre Modification à était réalisée </b>';
             }
     }
 }
